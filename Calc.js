@@ -4,82 +4,125 @@ var num2 = document.getElementById("number2");
 var res =  document.getElementById("result");
 
 
-$(document).ready(function () {   
+
+
+
+$(function () {   
+/* var inputVal= $('input').val();
+alert($.isNumeric(inputVal)); */
+$('.btn').on('click',function(){
+  if(num1.value=='' || num2.value==''){
+    alert('error must have only numbers in both displays');
+  }
+ if(':input.display'=== 'text'){
+  alert('is not a number');
+  }
+  else{
+    return ;
+  }
+})
+
+  $('.display').click(function(){
+    $(this).css('color','#099fd5','font-family:cursive');
+  
+  });
+
+
+  })
 $('#add').click(function(){
     res.value = 
-    parseInt(num1.value) + parseInt(num2.value);
+    parseInt(num1.value) + parseInt(num2.value); 
+    $('.display').css('background','yellow');
     $('.screen').css('background','yellow');
     $(this).css('background','yellow');
-  /*   $('#add').dblclick(function(){
-      $("#empty :input").val('');
-    }) */
+  
 });
 
 $('#sub').click(function(){
     res.value = 
     parseInt(num1.value) - parseInt(num2.value);
-$('.screen').css('background','green');
-$(this).css('background','green');
- /*    $('#sub').dblclick(function(){
-      $("#empty :input").val('');
-    }) */
+    $('.display').css('background','green');
+    $('.screen').css('background','green');
+    $(this).css('background','green');
    
 });
 $('#mult').mouseenter(function(){
     res.value = 
     parseInt(num1.value) * parseInt(num2.value);
+    $('.display').css('background','red');
     $('.screen').css('background','red');
     $(this).css('background','red');
-  /*   $('#mult').dblclick(function(){
-      $("#empty :input").val('');
-    }) */
+ 
 
 });
 $('#div').mouseleave(function(){
     res.value =
     parseInt(num1.value) / parseInt(num2.value);
+    $('.display').css('background','blue');
     $('.screen').css('background','blue');
     $(this).css('background','blue');
-  /*   $('#div').dblclick(function(){
-      $("#empty :input").val('');
-    }) */
+ 
 });
+
 $('#module').mouseover(function(){
-    res.value =
-    parseInt(num1.value) % parseInt(num2.value);
-    $('.screen').css('background','purple');
-    $(this).css('background','purple');
-   /*  $('.diplsy').innerHTML=number;
-    $('.btn').appendTo('.screen'); */
-    /* $('#module').dblclick(function(){
-      $("#empty :input").val('');
-    }) */
-});
+
+  res.value =
+  parseInt(num1.value) % parseInt(num2.value);
+   $('.display').css('background','purple');
+   $('.screen').css('background','purple');
+   $(this).css('background','purple');
+  /*  if($('#container.display').value("")){
+    alert('error');
+   } */
+    
+      
+    })
+   
+   
+
 $('#back').on('click',function(){
 
+$('.display').css('background','blue');
 alert('This button will empty your input');
 $(this).css('background','blue');
-$('.screen').css('background','silver');
-    $(".display").val('');  
+$('.screen').css('background','blue');
+$(':input.display').val('');
+$('.display').val=x.substr(0,x.length-1);
+
+  
 
 
 });
+
+
   $('#clear').click(function(){
     $(":input").val('');
     $('.screen').css('background','white');
     $(':input').css('background','white');
-    
+
+  
     
 });
+$('#refresh').on('click',function(){
+  window.location.reload(true);
+
+})
 $('.display').keypress(function(){
-  $('.btn').css('background','darkgrey');
+  $('#head').animate({
+    opacity: 0.1,
+    paddingbottom: '+50'}, 3000, function(){
+      $(this).append();
+    });
+ 
 });
+
 $('.screen').click(function(){
   $(':input').css('background','darkgrey');
   $('.screen').css('background','white');
-  alert('Must right a number first');
+  $(this).css('borderWidth','5px')
+  alert('Here you can only see the result.\nPlease enter numbers in the display above!');
 });
-});
+
 
 
 let numberOfDrumButton = $(".btn").length;

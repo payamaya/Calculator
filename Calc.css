@@ -8,7 +8,7 @@ html{
     font-size: 20px;
 } */
 body{
-    font-size:16px;
+
     padding: 0;
     margin: 0;
     background: linear-gradient(90deg, rgb(218, 43, 43), rgb(3, 3, 204));
@@ -32,7 +32,8 @@ h1{
    justify-items: center;
    border-radius: 0.25rem;
    border: solid black 2px;
-   margin: auto;
+   margin:0.25rem;
+   background-color: transparent;
    width:95%;
  }
 .btn{
@@ -42,7 +43,8 @@ h1{
    justify-content: center;
     border-radius: 0.25rem;
     border: solid black 2px;
-    color: crimson;
+    font-size: large;
+    transition: all 2.5s ease;
     
 }
 h4{ 
@@ -66,11 +68,6 @@ h4{
     height: fit-content;
     display: flex;
     flex-direction: row;
-    padding: auto;
-    margin:auto;
-
-    
- 
 }
 
 .screen{
@@ -79,26 +76,23 @@ h4{
    flex-direction: row;
    justify-items: center;
    border-radius: 0.25rem;
-   border: solid black 2px;
+   border: solid rgb(77, 129, 132) 3px;
    margin: auto;
+   transition: all 1.5s ease-in;
+   font-size: large;
+   font-family:cursive;
+   color:violet;
 }
 #container{
     width: fit-content;
     height: fit-content;
     border-radius: 0.25rem;
-    border: solid black 5px;
+    background: linear-gradient(90deg, rgb(170, 61, 61), rgb(61, 61, 164));
+    border: solid rgba(2, 5, 5, 0.496) 5px;
+    padding: 5px;
     margin: auto;
 }
-/* .texts p{
-color: black;
-text-align: left;
-background: blanchedalmond;
-width: 100%;
-padding-top: 10px;
-border-radius: 8px;
-margin-bottom: 10px;
-}
+.display{
+  font-family:cursive;
 
-.texts p.replay{
-    text-align: right ;
-} */
+}
