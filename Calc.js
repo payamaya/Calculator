@@ -8,19 +8,13 @@ var res =  document.getElementById("result");
 
 
 $(function () {   
-/* var inputVal= $('input').val();
-alert($.isNumeric(inputVal)); */
 $('.btn').on('click',function(){
-  if(num1.value=='' || num2.value==''){
-    alert('error must have only numbers in both displays');
-  }
- if(':input.display'=== 'text'){
-  alert('is not a number');
-  }
-  else{
-    return ;
-  }
-})
+  if(num1.value=='' || num2.value=='' ){
+    $('.display').val('');
+    $('h1').html('&#128078' + 'Error!Numbers In Both Display');
+    }
+
+});
 
   $('.display').click(function(){
     $(this).css('color','#099fd5','font-family:cursive');
@@ -28,14 +22,16 @@ $('.btn').on('click',function(){
   });
 
 
-  })
+  });
 $('#add').click(function(){
     res.value = 
     parseInt(num1.value) + parseInt(num2.value); 
     $('.display').css('background','yellow');
     $('.screen').css('background','yellow');
     $(this).css('background','yellow');
+    $('h4').css('color','yellow');
   
+
 });
 
 $('#sub').click(function(){
@@ -44,6 +40,7 @@ $('#sub').click(function(){
     $('.display').css('background','green');
     $('.screen').css('background','green');
     $(this).css('background','green');
+    $('h4').css('color','green').fadeIn('slow');
    
 });
 $('#mult').mouseenter(function(){
@@ -52,6 +49,7 @@ $('#mult').mouseenter(function(){
     $('.display').css('background','red');
     $('.screen').css('background','red');
     $(this).css('background','red');
+    $('h4').css('color','red').fadeIn(10);
  
 
 });
@@ -61,25 +59,20 @@ $('#div').mouseleave(function(){
     $('.display').css('background','blue');
     $('.screen').css('background','blue');
     $(this).css('background','blue');
+    $('h4').css('color','blue');
  
 });
 
 $('#module').mouseover(function(){
-
   res.value =
   parseInt(num1.value) % parseInt(num2.value);
    $('.display').css('background','purple');
    $('.screen').css('background','purple');
    $(this).css('background','purple');
-  /*  if($('#container.display').value("")){
-    alert('error');
-   } */
-    
+   $('h4').css('color','purple');
       
-    })
+    });
    
-   
-
 $('#back').on('click',function(){
 
 $('.display').css('background','blue');
@@ -87,32 +80,23 @@ alert('This button will empty your input');
 $(this).css('background','blue');
 $('.screen').css('background','blue');
 $(':input.display').val('');
-$('.display').val=x.substr(0,x.length-1);
-
-  
 
 
 });
-
 
   $('#clear').click(function(){
     $(":input").val('');
     $('.screen').css('background','white');
     $(':input').css('background','white');
-
-  
-    
 });
-$('#refresh').on('click',function(){
-  window.location.reload(true);
 
-})
 $('.display').keypress(function(){
   $('#head').animate({
-    opacity: 0.1,
+    opacity: 0.2,
     paddingbottom: '+50'}, 3000, function(){
       $(this).append();
     });
+    $('#head').html('Welcome' + '&#128079').css('color','yellow');
  
 });
 
@@ -122,12 +106,17 @@ $('.screen').click(function(){
   $(this).css('borderWidth','5px')
   alert('Here you can only see the result.\nPlease enter numbers in the display above!');
 });
+$('#refresh').on('click',function(){
+  window.location.reload(true);
+  
+
+})
 
 
 
-let numberOfDrumButton = $(".btn").length;
+let numberOfButton = $(".btn").length;
 
-for(i =0; i< numberOfDrumButton; i++){
+for(i =0; i< numberOfButton; i++){
 $(".btn")[i].addEventListener("click", function checkClick(){
    let buttonInnerHTML=this.innerHTML;
    makeSound(buttonInnerHTML); 
@@ -170,40 +159,3 @@ break;
   }
 }
 
-/* const texts = document.querySelector('.texts');
-window.speechRecognition= window.speechRecognition || window.webkitSpeechRecognition;
-const recognition = new window.speechRecognition();
-recognition.interimResults=true;
-
-let p = document.createElement('p');
-recognition.addEventListener('result',(e) =>{
-
-  const text = Array.from(e.results)
-  .map(result => result[0])
-  .map(result => result.transcript)
-  .join('');
-  p.innerText=text;
-  texts.appendChild(p);
-
-  if(e.result[0].isFinal){
-    if(text.includes('Hello')){
-      p = document.createElement('p');
-      p.classList.add('replay');
-      p.innerText='hi';
-      texts.appendChild(p);
-    }
-    if(text.includes('How old are you')){
-      p = document.createElement('p');
-      p.classList.add('replay');
-      p.innerText='Iam 42 years old';
-      texts.appendChild(p);
-    }
-    p = document.createElement('p');
-  }
-  console.log(e);
-})
-recognition.addEventListener('end', ()=>{
-recognition.start();
-})
- 
-recognition.start(); */

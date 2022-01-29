@@ -47,6 +47,17 @@ h1{
     transition: all 2.5s ease;
     
 }
+.btn-clear{
+
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+    border-radius: 0.25rem;
+    border: solid darkturquoise 2px;
+    font-size: large;
+    transition: all 2.5s ease;
+    
+}
 h4{ 
     position: absolute;
     top: 50%;
